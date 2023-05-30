@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: javasftp-svc
+spec:
+  selector:
+    app: javasftp
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 2222

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javasftp
+  labels:
+    app: javasftp
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javasftp
+  template:
+    metadata:
+      labels:
+        app: javasftp
+
+    spec:
+      containers:
+      - name: javasftp
+        image: javasftp:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 2222
+
+
